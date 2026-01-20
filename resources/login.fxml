@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.LoginController"
+      alignment="CENTER"
+      spacing="20"
+      styleClass="main-container">
+
+    <!-- Header -->
+    <VBox spacing="5" alignment="CENTER">
+        <Label text="Welcome to" styleClass="header-text"/>
+        <Label text="University Service Request App" styleClass="app-name"/>
+    </VBox>
+
+    <!-- Username -->
+    <HBox alignment="CENTER_LEFT" spacing="10" styleClass="input-container">
+        <ImageView fx:id="userIcon" fitHeight="24" fitWidth="24" preserveRatio="true"/>
+        <TextField fx:id="usernameField" promptText="Username" styleClass="input-field"/>
+    </HBox>
+
+    <!-- Password -->
+    <HBox alignment="CENTER_LEFT" spacing="10" styleClass="input-container">
+        <ImageView fx:id="lockIcon" fitHeight="24" fitWidth="24" preserveRatio="true"/>
+        <PasswordField fx:id="passwordField" promptText="Password" styleClass="input-field"/>
+    </HBox>
+
+    <!-- ERROR LABEL -->
+    <Label fx:id="errorLabel" text="" style="-fx-text-fill: red; -fx-font-size: 14px;"/>
+
+    <!-- Login Button -->
+    <Button text="Login" fx:id="loginButton" styleClass="login-button" onAction="#handleLogin"/>
+
+    <!-- Show Password -->
+    <Label fx:id="showPasswordLabel" text="Show default credentials" styleClass="forgot-link"/>
+</VBox>

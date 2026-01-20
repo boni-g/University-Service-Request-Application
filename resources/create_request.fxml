@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.CreateRequestController"
+      alignment="CENTER"
+      spacing="20"
+      styleClass="main-container">
+
+    <!-- Title Section -->
+    <VBox spacing="5" alignment="CENTER">
+        <Label text="Create a New" styleClass="header-text"/>
+        <Label text="Service Request" styleClass="app-name"/>
+    </VBox>
+
+    <!-- Request Type Input -->
+    <HBox alignment="CENTER_LEFT" spacing="10" styleClass="input-container">
+        <Label text="📄" styleClass="icon"/>
+        <ComboBox fx:id="requestTypeCombo" promptText="Select Request Type" styleClass="input-field" prefWidth="260"/>
+    </HBox>
+
+    <!-- Details Input Area -->
+    <VBox spacing="8" alignment="CENTER" styleClass="input-container-large">
+        <Label text="Details :" styleClass="small-label"/>
+        <TextArea fx:id="detailsField" styleClass="text-area-field" promptText="Describe your request..." prefWidth="260" prefRowCount="5"/>
+    </VBox>
+
+    <Label fx:id="feedbackLabel" styleClass="success-text"/>
+
+    <!-- Buttons -->
+    <HBox spacing="15" alignment="CENTER">
+        <Button fx:id="submitButton" text="Submit Request" styleClass="login-button" onAction="#handleSubmit"/>
+        <Button text="Back" styleClass="secondary-button" onAction="#handleBackToDashboard"/>
+    </HBox>
+
+</VBox>
